@@ -13,6 +13,7 @@ pipeline{
 		}
 		stage("PUSH-HUB"){
 			steps{
+			withCredentials([string(credentialsId: 'rajathegde94', variable: 'dockercred')])
 				echo "Pushing image to docker hub"
 				sh 'docker push rajathegde94/maven-tomcat'
 				echo "Docker image successfuly pushed to docker hub."
