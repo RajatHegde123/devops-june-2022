@@ -6,7 +6,7 @@ pipeline{
 			steps{
 				echo "BUILD stage - Docker image build - multistage docker build - maven & tomcat image"
 				sh ''' 
-					cd /home/ubuntu
+					
 					docker build -t rajathegde94/maven-tomcat .
 				'''
 			}
