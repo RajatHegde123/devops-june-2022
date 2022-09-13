@@ -11,7 +11,7 @@ pipeline{
 				'''
 			}
 		}
-		stage("PUSH-HUB"){
+		stage("PUSH TO DOCKER HUB"){
 			steps{
 			script {
 			withCredentials([string(credentialsId: 'rajathegde94', variable: 'dockercred')])
@@ -25,7 +25,7 @@ pipeline{
 			}
 		}
 		
-		stage("RUN-CONTAINER"){
+		stage("RUN CONTAINER"){
 			steps{
 				echo "Running container"
 				sh 'docker run -it -d -p 8085:8080 rajathegde94/maven-tomcat'
